@@ -22,18 +22,18 @@ ________________________________________________________________________________
    infrastructure
  2. Enable collaboration with everyone
   
-   You probably don't want to distribute Terraform credentials to everyone in your engineering organization, but now anyone can 
-   open up a Terraform pull request.
+   You probably don't want to distribute Terraform credentials to everyone in your engineering organization, but now  
+   anyone can open up a Terraform pull request.
    
    You can require approval before the pull request is applied so nothing happens accidentally.
   
  3. Review Terraform pull requests better
   
-   You can't fully review a Terraform change without seeing the output of terraform plan. Now that output is added to the pull 
-   request automatically.
+   You can't fully review a Terraform change without seeing the output of terraform plan. Now that output is added 
+   to the pull request automatically.
 
  4. Standardize your workflows
   
-   Atlantis locks a directory/workspace until the pull request is merged or the lock is manually deleted. This ensures that 
-   changes are applied in the order expected.
+   Atlantis locks a directory/workspace until the pull request is merged or the lock is manually deleted. This 
+   ensures that changes are applied in the order expected.
 
