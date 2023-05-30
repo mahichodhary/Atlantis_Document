@@ -8,7 +8,7 @@ Atlantis listens for GitHub, GitLab or Bitbucket webhooks about Terraform pull r
 __________________________________________________________________________________________________________________________________
  Why Atlantis??
 
- 1. Increased visibility
+1. Increased visibility
 
   When everyone is executing Terraform on their own computers, it's hard to know the current state of your infrastructure:
   
@@ -20,16 +20,16 @@ ________________________________________________________________________________
   
   With Atlantis,everything is visible on the pull request.You can view the history of everything that was done to your infrastructure
   
-  2. Enable collaboration with everyone
+ 2. Enable collaboration with everyone
   
   You probably don't want to distribute Terraform credentials to everyone in your engineering organization, but now anyone can open up a Terraform pull request.
   You can require approval before the pull request is applied so nothing happens accidentally.
   
-  3. Review Terraform pull requests better
+ 3. Review Terraform pull requests better
   
   You can't fully review a Terraform change without seeing the output of terraform plan. Now that output is added to the pull request automatically.
 
-  4. Standardize your workflows
+ 4. Standardize your workflows
   
   Atlantis locks a directory/workspace until the pull request is merged or the lock is manually deleted. This ensures that changes are applied in the order expected.
 
