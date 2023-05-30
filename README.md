@@ -86,5 +86,31 @@ Setup Of Atlantis:
        Issue comments
        Pull requests
    d. leave Active checked
+   
    f. click Add webhook
+  
+8. GitHub or GitHub Enterprise Access Token
+
+   a. Create a Personal Access Token
+   
+   b. create a token with repo scope
+   
+   c. set the token as an environment variable
+   
+   d. TOKEN="{YOUR_TOKEN}"
+   
+   e. USERNAME="{the username of your GitHub, GitLab or Bitbucket user}"
+
+   f. REPO_ALLOWLIST="$YOUR_GIT_HOST/$YOUR_USERNAME/$YOUR_REPO"
+   
+9. Now you can start Atlantis by using GitHub Commamd:
+.
+
+    atlantis server \
+    --atlantis-url="$URL" \
+    --gh-user="$USERNAME" \
+    --gh-token="$TOKEN" \
+    --gh-webhook-secret="$SECRET" \
+    --repo-allowlist="$REPO_ALLOWLIST"
+
 
