@@ -111,9 +111,9 @@ Setup Of Atlantis:
       --gh-token="$TOKEN" \
       --gh-webhook-secret="$SECRET" \
       --repo-allowlist="$REPO_ALLOWLIST"
-      
-      
-      
+_________________________________________________________________________________________________________________________________    
+Workflow Diagram:      
+        
 ![Atlantis_Workflow](https://github.com/mahichodhary/Atlantis_Document/assets/130489002/bf4ca3f5-31eb-4af7-8253-50cfc20c6a69)
 
 
