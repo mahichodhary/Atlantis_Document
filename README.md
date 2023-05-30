@@ -104,8 +104,8 @@ Setup Of Atlantis:
    f. REPO_ALLOWLIST="$YOUR_GIT_HOST/$YOUR_USERNAME/$YOUR_REPO"
    
 9. Now you can start Atlantis by using GitHub Commamd:
-.
 
+.
 
     atlantis server \
     --atlantis-url="$URL" \
