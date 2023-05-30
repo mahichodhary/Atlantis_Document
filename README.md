@@ -79,12 +79,12 @@ Setup Of Atlantis:
    
    d. set Content type to application/json & Secret to your random string
    
-   e. select Let me select individual events & check the boxes
+   e. select Let me select individual events & check the boxes:
    
        Pull request reviews
        Pushes
        Issue comments
        Pull requests
-       leave Active checked
-       click Add webhook
+   d. leave Active checked
+   f. click Add webhook
 
