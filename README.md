@@ -6,7 +6,8 @@ Atlantis is an application for automating Terraform via pull requests. It is dep
 Atlantis listens for GitHub, GitLab or Bitbucket webhooks about Terraform pull requests. It then runs terraform plan and comments with the output back on the pull request.
 
 __________________________________________________________________________________________________________________________________
- Why Atlantis??
+
+Why Atlantis??
 
 1. Increased visibility
 
@@ -37,6 +38,7 @@ ________________________________________________________________________________
      Atlantis locks a directory/workspace until the pull request is merged or the lock is manually deleted. This 
      ensures that changes are applied in the order expected.
    __________________________________________________________________________________________________________________________________
+
 Setup Of Atlantis:
 
 1. Install Terraform
@@ -112,6 +114,7 @@ Setup Of Atlantis:
       --gh-webhook-secret="$SECRET" \
       --repo-allowlist="$REPO_ALLOWLIST"
 _________________________________________________________________________________________________________________________________    
+
 Workflow Diagram:      
         
 ![Atlantis_Workflow](https://github.com/mahichodhary/Atlantis_Document/assets/130489002/bf4ca3f5-31eb-4af7-8253-50cfc20c6a69)
