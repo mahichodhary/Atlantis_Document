@@ -106,6 +106,7 @@ Setup Of Atlantis:
 9. Now you can start Atlantis by using GitHub Commamd:
 .
 
+
     atlantis server \
     --atlantis-url="$URL" \
     --gh-user="$USERNAME" \
