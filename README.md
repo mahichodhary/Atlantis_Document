@@ -139,31 +139,31 @@ To use server side repo config create a config file, ex. repos.yaml, and pass it
         apply_requirements: [approved]
         allowed_overrides: [apply_requirements, workflow, delete_source_branch_on_merge, repo_locking]
 -id:
-   ### id can either be an exact repo ID or a regex.
-   # using a regex, it must start and end with a slash.
-   # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex. github.com/runatlantis/atlantis.
+   #### id can either be an exact repo ID or a regex.
+   #### using a regex, it must start and end with a slash.
+   #### Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex. github.com/runatlantis/atlantis.
   
 -branch:
-  # branch is an regex matching pull requests by base branch (using this you can specify a particular branch)
-  # (the branch the pull request is getting merged into).
-  # By default, all branches are matched
+  #### branch is an regex matching pull requests by base branch (using this you can specify a particular branch)
+  #### (the branch the pull request is getting merged into).
+  #### By default, all branches are matched
   
 repo_config_file:
-  # repo_config_file specifies which repo config file to use for this repo.
-  # By default, atlantis.yaml is used.
+  #### repo_config_file specifies which repo config file to use for this repo.
+  #### By default, atlantis.yaml is used.
   
 plan_requirements:
-  # plan_requirements sets the Plan Requirements for all repos that match.
+  #### plan_requirements sets the Plan Requirements for all repos that match.
 
 apply_requirements:
-  # apply_requirements sets the Apply Requirements for all repos that match.
+  #### apply_requirements sets the Apply Requirements for all repos that match.
   
 allowed_overrides specifies:
-# allowed_overrides specifies which keys can be overridden by this repo in its atlantis.yaml file.
+#### allowed_overrides specifies which keys can be overridden by this repo in its atlantis.yaml file.
 
 __________________________________________________________________________________________________________________________________
   
-# Multiple Atlantis Servers Handle The Same Repository
+## Multiple Atlantis Servers Handle The Same Repository
 Running multiple Atlantis servers to handle the same repository can be done to separate permissions for each Atlantis server. In this case, a different atlantis.yaml repository config file can be used by using different repos.yaml files.
 
 For example, consider a situation where a separate production-server atlantis uses repo config atlantis-production.yaml and staging-server atlantis uses repo config atlantis-staging.yaml.
@@ -172,7 +172,7 @@ Each server has different permissions and a different repos.yaml file.
 
 The repos.yaml contains repo_config_file key to specify the repository atlantis config file 
 
-    # repos.yaml 
+    ## repos.yaml 
       repos: 
       - id: /.*/ 
         # for production-server
@@ -184,7 +184,7 @@ Then, create atlantis-production.yaml and atlantis-staging.yaml files in the rep
 
 __________________________________________________________________________________________________________________________________
 
-# Repo Level atlantis.yaml Config
+### Repo Level atlantis.yaml Config
 An atlantis.yaml file specified at the root of a Terraform repo allows you to instruct Atlantis on the structure of your repo and set custom workflows.
  
 For Module atlantis.yaml:
@@ -208,7 +208,7 @@ If you want Atlantis to plan project1/ whenever any .tf files under module1/ cha
       autoplan:
         when_modified: ["../modules/**/*.tf", "*.tf*",]
         
-# For Custom Workflow
+### For Custom Workflow
 Custom workflows can be specified in the Server-Side Repo Config or in the Repo-Level atlantis.yaml files.
 
          .
