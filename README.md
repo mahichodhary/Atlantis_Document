@@ -120,4 +120,45 @@ Workflow Diagram:
 ![Atlantis_Workflow](https://github.com/mahichodhary/Atlantis_Document/assets/130489002/bf4ca3f5-31eb-4af7-8253-50cfc20c6a69)
 
 
+__________________________________________________________________________________________________________________________________
+
+
+Server Side Config
+
+A Server-Side Config file is used for more groups of server config that can't reasonably be expressed through flags.
+
+You do not need a server-side repo config file unless you want to customize some aspect of Atlantis on a per-repo basis.
+
+To use server side repo config create a config file, ex. repos.yaml, and pass it to the atlantis server command via the --repo-config
+
+repos:
+  # id can either be an exact repo ID or a regex.
+  # If using a regex, it must start and end with a slash.
+  # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex.
+  # github.com/runatlantis/atlantis.
+- id: /.*/
+  # branch is an regex matching pull requests by base branch
+  # (the branch the pull request is getting merged into).
+  # By default, all branches are matched
+  branch: /.*/
+
+  # repo_config_file specifies which repo config file to use for this repo.
+  # By default, atlantis.yaml is used.
+  repo_config_file: path/to/atlantis.yaml
+
+  # plan_requirements sets the Plan Requirements for all repos that match.
+  plan_requirements: [approved, mergeable, undiverged]
+
+  # apply_requirements sets the Apply Requirements for all repos that match.
+  apply_requirements: [approved, mergeable, undiverged]
+  
+  # workflow sets the workflow for all repos that match.
+  # This workflow must be defined in the workflows section.
+  workflow: custom
+
+  # allowed_overrides specifies which keys can be overridden by this repo in
+  # its atlantis.yaml file.
+  allowed_overrides: [apply_requirements, workflow, delete_source_branch_on_merge, repo_locking]
+
+
 
