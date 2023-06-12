@@ -207,7 +207,7 @@ If you want Atlantis to plan project1/ whenever any .tf files under module1/ cha
 
     version: 3
     projects:
-    - dir: project1
+    - dir: project1 
       autoplan:
         when_modified: ["../modules/**/*.tf", "*.tf*",]
         
@@ -228,8 +228,10 @@ Custom workflows can be specified in the Server-Side Repo Config or in the Repo-
           - init
           - plan:
               extra_args: ["-var-file", "staging.tfvars"]
-    # NOTE: no need to define the apply stage because it will default
-    # to the normal apply stage.
+        apply:
+          steps:
+            - apply:
+                extra_args: ["-var-file", "production.tfvars"]      
       production:
         plan:
           steps:
@@ -240,7 +242,10 @@ Custom workflows can be specified in the Server-Side Repo Config or in the Repo-
           steps:
             - apply:
                 extra_args: ["-var-file", "production.tfvars"]
-                
+Commands for workspace: 
+                           
+    atlantis plan -w staging  #or    atlantis plan -w production
+    
      
 ##### If multiple atlantis.yaml file with different configuration in same repository you want to use a particular atlantis.yaml give path of the file at server-side in repos.yaml (repo_config_file: path/to/atlantis.yaml) 
   
