@@ -144,7 +144,9 @@ To use server side repo config create a config file, ex. repos.yaml, and pass it
    # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex. github.com/runatlantis/atlantis.
   
 -branch:
-# repo_config_file specifies which repo config file to use for this repo.
+  # branch is an regex matching pull requests by base branch (using this you can specify a particular branch)
+  # (the branch the pull request is getting merged into).
+  # By default, all branches are matched
   
 repo_config_file:
   # repo_config_file specifies which repo config file to use for this repo.
@@ -178,7 +180,24 @@ The repos.yaml contains repo_config_file key to specify the repository atlantis 
         # for staging-server
         # repo_config_file: atlantis-staging.yaml
         
-Then, create atlantis-production.yaml and atlantis-staging.yaml files in the repository. 
+Then, create atlantis-production.yaml and atlantis-staging.yaml files in the repository .
+
+__________________________________________________________________________________________________________________________________
+
+# Repo Level atlantis.yaml Config
+An atlantis.yaml file specified at the root of a Terraform repo allows you to instruct Atlantis on the structure of your repo and set custom workflows.
+
+.
+├── modules
+│   └── module1
+│       ├── main.tf
+│       ├── outputs.tf
+│       └── submodule
+│           ├── main.tf
+│           └── outputs.tf
+└── project1
+    └── main.tf
+    
 
 
 
