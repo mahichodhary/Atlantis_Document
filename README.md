@@ -177,6 +177,9 @@ The repos.yaml contains repo_config_file key to specify the repository atlantis 
         repo_config_file: atlantis-production.yaml
         # for staging-server
         # repo_config_file: atlantis-staging.yaml
+        
+Then, create atlantis-production.yaml and atlantis-staging.yaml files in the repository. 
+
 
 
 
