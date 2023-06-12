@@ -168,17 +168,15 @@ For example, consider a situation where a separate production-server atlantis us
 
 Each server has different permissions and a different repos.yaml file.
 
-The repos.yaml contains repo_config_file key to specify the repository atlantis config file path.
+The repos.yaml contains repo_config_file key to specify the repository atlantis config file 
 
-# repos.yaml
-repos:
-- id: /.*/
-  # for production-server
-  repo_config_file: atlantis-production.yaml
-  # for staging-server
-  # repo_config_file: atlantis-staging.yaml
-
-
+    # repos.yaml 
+      repos: 
+      - id: /.*/ 
+        # for production-server
+        repo_config_file: atlantis-production.yaml
+        # for staging-server
+        # repo_config_file: atlantis-staging.yaml
 
 
 
