@@ -186,19 +186,55 @@ ________________________________________________________________________________
 
 # Repo Level atlantis.yaml Config
 An atlantis.yaml file specified at the root of a Terraform repo allows you to instruct Atlantis on the structure of your repo and set custom workflows.
+ 
+For Module atlantis.yaml:
 
-.
-├── modules
-│   └── module1
-│       ├── main.tf
-│       ├── outputs.tf
-│       └── submodule
-│           ├── main.tf
-│           └── outputs.tf
-└── project1
-    └── main.tf
-    
+    .
+    ├── modules
+    │   └── module1
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── submodule
+    │           ├── main.tf
+    │           └── outputs.tf
+    └── project1
+         └── main.tf
+  
+If you want Atlantis to plan project1/ whenever any .tf files under module1/ change or any .tf or .tfvars files under project1/ change you could use the following configuration for atlantis.yaml:
 
+    version: 3
+    projects:
+    - dir: project1
+      autoplan:
+        when_modified: ["../modules/**/*.tf", "*.tf*",]
+        
+# For Custom Workflow
+Custom workflows can be specified in the Server-Side Repo Config or in the Repo-Level atlantis.yaml files.
 
+         .
+    └── project1
+        ├── main.tf
+        ├── production.tfvars
+        └── staging.tfvars
 
+    # repos.yaml or atlantis.yaml
+    workflows:
+      staging:
+        plan:
+          steps:
+          - init
+          - plan:
+              extra_args: ["-var-file", "staging.tfvars"]
+    # NOTE: no need to define the apply stage because it will default
+    # to the normal apply stage.
+      production:
+        plan:
+          steps:
+          - init
+          - plan:
+              extra_args: ["-var-file", "production.tfvars"]
+        apply:
+          steps:
+            - apply:
+                extra_args: ["-var-file", "production.tfvars"]
 
