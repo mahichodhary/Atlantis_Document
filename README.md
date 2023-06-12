@@ -210,7 +210,7 @@ If you want Atlantis to plan project1/ whenever any .tf files under module1/ cha
     - dir: project1 
       autoplan:
         when_modified: ["../modules/**/*.tf", "*.tf*",]
-        
+________________________________________________________________________________________________________________________________________________________        
 #### For Custom Workflow
 Custom workflows can be specified in the Server-Side Repo Config or in the Repo-Level atlantis.yaml files.
 
@@ -244,9 +244,26 @@ Custom workflows can be specified in the Server-Side Repo Config or in the Repo-
                 extra_args: ["-var-file", "production.tfvars"]
 Commands for workspace: 
                            
-    atlantis plan -w staging  #or    atlantis plan -w production
+    atlantis plan -p project1-staging  
+    atlantis plan -p project1-production
     
      
 ##### If multiple atlantis.yaml file with different configuration in same repository you want to use a particular atlantis.yaml give path of the file at server-side in repos.yaml (repo_config_file: path/to/atlantis.yaml) 
-  
+
+
+##### When module and workspace are used together:
+
+          version: 3
+          projects:
+          - dir: project1
+            workspace: staging
+          - dir: project1
+            workspace: production
+            
+With the above config, when Atlantis determines that the configuration for the project1 dir has changed, it will run plan for both the staging and production workspaces.
+
+If you want to plan or apply for a specific workspace you can use
+
+    atlantis plan -w staging -d project1
+    atlantis plan -w production -d project1
 
