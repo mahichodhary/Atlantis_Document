@@ -113,6 +113,9 @@ Setup Of Atlantis:
       --gh-token="$TOKEN" \
       --gh-webhook-secret="$SECRET" \
       --repo-allowlist="$REPO_ALLOWLIST"
+  
+10. To run atlantis apply command you need to configure aws or attach role to EC2 instance.
+
 _________________________________________________________________________________________________________________________________    
 
 Workflow Diagram:      
@@ -187,7 +190,7 @@ ________________________________________________________________________________
 ### Repo Level atlantis.yaml Config
 An atlantis.yaml file specified at the root of a Terraform repo allows you to instruct Atlantis on the structure of your repo and set custom workflows.
  
-For Module atlantis.yaml:
+#### For Module atlantis.yaml:
 
     .
     ├── modules
@@ -208,7 +211,7 @@ If you want Atlantis to plan project1/ whenever any .tf files under module1/ cha
       autoplan:
         when_modified: ["../modules/**/*.tf", "*.tf*",]
         
-### For Custom Workflow
+#### For Custom Workflow
 Custom workflows can be specified in the Server-Side Repo Config or in the Repo-Level atlantis.yaml files.
 
          .
@@ -237,4 +240,8 @@ Custom workflows can be specified in the Server-Side Repo Config or in the Repo-
           steps:
             - apply:
                 extra_args: ["-var-file", "production.tfvars"]
+                
+     
+##### If multiple atlantis.yaml file with different configuration in same repository you want to use a particular atlantis.yaml give path of the file at server-side in repos.yaml (repo_config_file: path/to/atlantis.yaml) 
+  
 
