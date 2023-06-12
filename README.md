@@ -141,26 +141,19 @@ To use server side repo config create a config file, ex. repos.yaml, and pass it
 
   # id can either be an exact repo ID or a regex.
   # If using a regex, it must start and end with a slash.
-  # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex.
-  # github.com/runatlantis/atlantis.
-- id: /.*/
-
+  # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex. github.com/runatlantis/atlantis.
+  
   # branch is an regex matching pull requests by base branch
   # (the branch the pull request is getting merged into).
   # By default, all branches are matched
-  branch: /.*/
 
   # repo_config_file specifies which repo config file to use for this repo.
   # By default, atlantis.yaml is used.
-  repo_config_file: path/to/atlantis.yaml
 
   # plan_requirements sets the Plan Requirements for all repos that match.
-  plan_requirements: [approved, mergeable, undiverged]
 
   # apply_requirements sets the Apply Requirements for all repos that match.
-  apply_requirements: [approved, mergeable, undiverged]
-
+  
   # allowed_overrides specifies which keys can be overridden by this repo in
   # its atlantis.yaml file.
-  allowed_overrides: [apply_requirements, workflow, delete_source_branch_on_merge, repo_locking]
-
+  
