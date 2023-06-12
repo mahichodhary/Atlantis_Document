@@ -49,7 +49,7 @@ Setup Of Atlantis:
 
 2. Download Atlantis
 
-    https://github.com/runatlantis/atlantis/release
+    https://github.com/runatlantis/atlantis/releases/tag/v0.24.2
 
 3. For Local server:- Download Ngrok
 
