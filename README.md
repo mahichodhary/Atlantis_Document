@@ -139,7 +139,7 @@ To use server side repo config create a config file, ex. repos.yaml, and pass it
         apply_requirements: [approved]
         allowed_overrides: [apply_requirements, workflow, delete_source_branch_on_merge, repo_locking]
 -id:
-   # id can either be an exact repo ID or a regex.
+   ### id can either be an exact repo ID or a regex.
    # using a regex, it must start and end with a slash.
    # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex. github.com/runatlantis/atlantis.
   
