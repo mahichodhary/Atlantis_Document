@@ -132,7 +132,6 @@ You do not need a server-side repo config file unless you want to customize some
 To use server side repo config create a config file, ex. repos.yaml, and pass it to the atlantis server command via the --repo-config.
 
 repos:
-
 - id: /.*/
 
   branch: /.*/
