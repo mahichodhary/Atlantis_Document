@@ -45,7 +45,7 @@ Setup Of Atlantis:
 
     a. Download from https://developer.hashicorp.com/terraform/downloads 
     
-    b. unzip path/to/terraform_*.zip -d /usr/local/bin
+    b. sudo unzip path/to/terraform_*.zip -d /usr/local/bin
 
 2. Download Atlantis
 
