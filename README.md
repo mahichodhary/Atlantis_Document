@@ -147,7 +147,7 @@ To use server side repo config create a config file, ex. repos.yaml, and pass it
    #### Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex. github.com/runatlantis/atlantis.
   
 -branch:
-  #### branch is an regex matching pull requests by base branch (using this you can specify a particular branch)
+  #### branch is an regex matching pull requests by base branch (using this you can specify particular branch)
   #### (the branch the pull request is getting merged into).
   #### By default, all branches are matched
   
@@ -262,8 +262,10 @@ Commands for workspace:
             
 With the above config, when Atlantis determines that the configuration for the project1 dir has changed, it will run plan for both the staging and production workspaces.
 
-If you want to plan or apply for a specific workspace you can use
+If you want to run plan or apply for a specific workspace using directory you can use
 
     atlantis plan -w staging -d project1
     atlantis plan -w production -d project1
+
+
 
