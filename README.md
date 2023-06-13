@@ -63,7 +63,7 @@ Setup Of Atlantis:
     
 4. Else if EC2 Server You can use its public ip.
 
-    URL="http://public_ip:4141/events"
+    URL="http://public_ip:4141"
     
 5. Create a random string 
 
