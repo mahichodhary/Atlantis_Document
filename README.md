@@ -102,19 +102,24 @@ Setup Of Atlantis:
    d. TOKEN="{YOUR_TOKEN}"
    
    e. USERNAME="{the username of your GitHub, GitLab or Bitbucket user}"
-
+  
    f. REPO_ALLOWLIST="$YOUR_GIT_HOST/$YOUR_USERNAME/$YOUR_REPO"
-
+   
+   #For other enterprise access token you can visit https://www.runatlantis.io/guide/testing-locally.html#create-an-access-token-for-atlantis 
+   
 9.Now you can start Atlantis by using GitHub Command:
-
+   
       ./atlantis server \
       --atlantis-url="$URL" \
       --gh-user="$USERNAME" \
       --gh-token="$TOKEN" \
       --gh-webhook-secret="$SECRET" \
       --repo-allowlist="$REPO_ALLOWLIST"
+      
+   #To start atlantis server for other enterprise you can visit https://www.runatlantis.io/guide/testing-locally.html#start-atlantis    
+ 
   
-10. To run atlantis apply command you need to configure aws or attach role to EC2 instance.
+10. To run atlantis command you need to configure aws or attach role to your server(based on your terraform code).
 
 _________________________________________________________________________________________________________________________________    
 
