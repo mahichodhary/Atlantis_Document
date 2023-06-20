@@ -118,9 +118,6 @@ Setup Of Atlantis:
       
    #To start atlantis server for other enterprise you can visit https://www.runatlantis.io/guide/testing-locally.html#start-atlantis    
  
-  
-10. To run atlantis command you need to configure aws or attach role to your server(based on your terraform code).
-
 _________________________________________________________________________________________________________________________________    
 
 Workflow Diagram:      
